@@ -19,12 +19,28 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    z-index: 99;
+}
+
+.startScreen > h1 {
+    /* font-family: "Caveat", sans-serif; */
+    /* font-family: "Gloria Hallelujah", sans-serif; */
+    /* font-family: "Indie Flower", sans-serif; */
+    font-family: "Mansalva", sans-serif;
+    color: white;
+    font-size: 5em;
+    text-align: center;
+    position: absolute;
+    top: 5%;
 }
 
 .startScreen > p {
     color: white;
     font-family: "Mansalva", sans-serif;
     font-size: 2em;
+    position: absolute;
+    top: 15%;
 }
 
 .startBtn {
@@ -43,7 +59,7 @@ body {
 }
 
 .shrinkStartScreen {
-    animation: shrinkStartScreen 1.5s forwards;
+    animation: shrinkStartScreen 3s forwards;
 }
 
 @keyframes shrinkStartScreen {
@@ -75,16 +91,61 @@ body {
     left: 0;
 }
 
-h1 {
-    /* font-family: "Caveat", sans-serif; */
-    /* font-family: "Gloria Hallelujah", sans-serif; */
-    /* font-family: "Indie Flower", sans-serif; */
-    font-family: "Mansalva", sans-serif;
+.header {
+    background: linear-gradient(#079992, #82CCDD);
+    height: 15vh;
     color: white;
-    font-size: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header > h1 {
+    font-size: 3em;
+    text-align: center;
+    font-family: "Mansalva", sans-serif;
+}
+
+form {
+    background-color: #F3F3F3;
+    padding: 5% 15%;
     text-align: center;
 }
 
+input {
+    margin: 20px auto;
+    border: 2px solid #CECECE;
+    height: 45px;
+    width: 100%;
+    padding: 5px;
+}
+
+input::placeholder {
+    font-size: 1em;
+    color: #afafaf;
+    font-family: "Mansalva", sans-serif;
+}
+
+button[type="submit"] {
+    background-color: #FA983A;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: "Nunito", sans-serif;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+body > h1 {
+    font-family: "Mansalva", sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin: 50px auto;
+    color: #1d1d1d;
+}
 .hide {
     display: none;
 }

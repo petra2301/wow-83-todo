@@ -8,11 +8,22 @@
     <title>To-Do List</title>
 </head>
 <body>
-    <div class="startScreen">
+    <div class="startScreen hide">
         <h1>To-Do List</h1>
         <p>by Petra Gergely</p>
         <button class="startBtn">Click to Continue</button>
     </div>
+    <div class="header">
+        <h1>Add a task:</h1>
+    </div>
+    <form>
+        <label for="task"><strong>Task:</strong></label><br>
+        <input type="text" name="task" placeholder="Walk the dog" required><br>
+        <label for="when"><strong>When?</strong></label><br>
+        <input type="text" name="when" placeholder="Today / In the afternoon / 2019. 09. 31." required><br>
+        <button type="submit" class="addTaskBtn">Add task</button>
+    </form>
+    <h1>Your tasks so far:</h1>
     <div class="gradientBottom hide"></div>
     <script src="todo.js"></script>
 </body>
