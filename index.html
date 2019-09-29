@@ -24,6 +24,21 @@
         <textarea name="notes" placeholder="Remember to take documents with you"></textarea>
         <button type="submit" class="addTaskBtn">Add task</button>
     </form>
+    <div class="modal hide">
+        <div class="editPopup">
+        <h2>Edit "<span class="taskOgName"></span>"</h2>
+        <form id="editForm">
+                <label for="task"><strong>Task:</strong></label><br>
+                <input type="text" name="task" placeholder="Walk the dog" required><br>
+                <label for="when"><strong>When?</strong></label><br>
+                <input type="text" name="when" placeholder="Today / In the afternoon / 2019. 09. 31." required><br>
+                <label for="notes"><strong>Notes (optional):</strong></label><br>
+                <textarea name="notes" placeholder="Remember to take documents with you"></textarea>
+                <input type="hidden" name="id">
+                <button type="submit" class="editTaskBtn">Done editing</button>
+        </form>
+        </div>
+    </div>
     </div>
     <h1>Your tasks so far:</h1>
     <main></main>
@@ -35,6 +50,7 @@
             <p class="taskNotes">Task notes</p>
             <button class="editBtn"></button>
             <button class="doneBtn"></button>
+            <button class="notDoneBtn hide"></button>
             <button class="deleteBtn"></button>
         </article>
     </template>
