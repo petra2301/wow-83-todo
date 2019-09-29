@@ -4,6 +4,7 @@
 
 const startBtn = document.querySelector(".startBtn");
 const addForm = document.querySelector("form#addForm");
+const addTaskBtn = document.querySelector(".addTaskBtn");
 const editForm = document.querySelector("form#editForm");
 const modal = document.querySelector(".modal");
 
@@ -11,6 +12,7 @@ startBtn.addEventListener("click", closeStartScreen);
 
 addForm.addEventListener("submit", e => {
     e.preventDefault();
+    addTaskBtn.textContent = "Waiting..."
     post();
   });
 
@@ -20,9 +22,18 @@ editForm.addEventListener("submit", e => {
     document.querySelector(".modal").classList.add("hide");
  })
 
-modal.addEventListener("click", () => {
+modal.querySelector(".closeModal").addEventListener("click", () => {
     modal.classList.add("hide");
+    document.querySelector(".taskOgName").textContent = "";
+    editForm.reset();
 })
+
+modal.querySelector(".cancelEditing").addEventListener("click", () => {
+    modal.classList.add("hide");
+    document.querySelector(".taskOgName").textContent = "";
+    editForm.reset();
+})
+
 get();
 
 function get() {
@@ -62,6 +73,12 @@ function post() {
         addTask(data);
         showToast();
         addForm.reset();
+        addTaskBtn.textContent = "Successfully added";
+        addTaskBtn.style.backgroundColor = "green";
+        setTimeout( function() {
+            addTaskBtn.textContent = "Add task";
+            addTaskBtn.style.backgroundColor = "#FA983A";
+        }, 3000);
       });
   }
 
@@ -168,7 +185,7 @@ function addTask(task) {
         makeNotDone(task._id);
     })
 
-    document.querySelector("main").appendChild(clone);
+    document.querySelector("main").prepend(clone);
   }
 
 function showToast() {
