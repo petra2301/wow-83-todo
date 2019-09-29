@@ -198,6 +198,8 @@ function showToast() {
 
 function closeStartScreen() {
     const startScreen = document.querySelector(".startScreen");
+    startScreen.querySelector("h1").classList.add("shrinkHeader");
+    startScreen.querySelector("p").classList.add("shrinkText");
     startScreen.classList.add("shrinkStartScreen");
     startScreen.addEventListener("animationend", ()=> {
         startScreen.classList.add("hide");

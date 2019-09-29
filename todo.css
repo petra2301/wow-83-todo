@@ -20,7 +20,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    position: relative;
+    position: absolute;
     z-index: 99;
 }
 
@@ -74,6 +74,46 @@ body {
     }
 }
 
+.shrinkHeader {
+    animation: shrinkHeader 3s forwards;
+}
+
+@keyframes shrinkHeader {
+    0% {
+        position: absolute;
+        top: 5%;
+    }
+
+    30% {
+        top: 15%;
+    }
+
+    100% {
+        position: absolute;
+        top: -500px;
+    }
+}
+
+.shrinkText {
+    animation: shrinkText 3s forwards;
+}
+
+@keyframes shrinkText {
+    0% {
+        position: absolute;
+        top: 15%;
+    }
+    
+    30% {
+        top: 25%;
+    }
+
+    100% {
+        position: absolute;
+        top: -400px;
+    }
+}
+
  .startBtn::after {
     content: url(img/down-arrow.png);
     display: block;
@@ -84,7 +124,7 @@ body {
     height: 100px;
     width: 100%;
     background: linear-gradient(0deg, #fff, #ffffff00);
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
 }
@@ -182,7 +222,7 @@ main {
     grid-gap: 20px;
     padding: 10px;
     max-width: 1300px;
-    margin: 0 auto;
+    margin: 0 auto 100px auto;
 }
 
 .taskDate, .taskDateP {
