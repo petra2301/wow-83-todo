@@ -92,8 +92,8 @@ body {
 }
 
 .header {
-    background: linear-gradient(#079992, #82CCDD);
-    height: 15vh;
+    background: url(img/todobg.png);
+    background-position: 100%;
     color: white;
     display: flex;
     align-items: center;
@@ -108,20 +108,23 @@ body {
 }
 
 form {
-    background-color: #F3F3F3;
     padding: 5% 15%;
     text-align: center;
 }
 
-input {
+input, textarea {
     margin: 20px auto;
     border: 2px solid #CECECE;
-    height: 45px;
     width: 100%;
     padding: 5px;
+    height: 100px;
 }
 
-input::placeholder {
+input {
+    height: 45px;
+}
+
+input::placeholder, textarea::placeholder {
     font-size: 1em;
     color: #afafaf;
     font-family: "Mansalva", sans-serif;
@@ -146,6 +149,115 @@ body > h1 {
     margin: 50px auto;
     color: #1d1d1d;
 }
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 10px;
+}
+
+.taskDate {
+    color: #808080;
+}
+
+article {
+    border: 1px solid #CECECE;
+    padding: 10px;
+    box-shadow: 3px 3px 6px #00000029;
+}
+
+article > h2 {
+    font-size: 1.3em;
+}
+
+article > p {
+    color: #333333;
+}
+
+.editBtn {
+    background: url(img/edit.png);
+    background-color: #38ADA9;
+}
+
+.editBtn:hover {
+    background-color: #079992;
+}
+
+.doneBtn {
+    background: url(img/done.png);
+    background-color: #B8E994;
+}
+
+.doneBtn:hover {
+    background-color: #78e08f;
+}
+
+.deleteBtn {
+    background: url(img/delete.png);
+    background-color: #e55039;
+}
+
+.deleteBtn:hover {
+    background-color: #eb2f06;
+}
+.editBtn, .doneBtn, .deleteBtn {
+    width: 50px;
+    height: 50px;
+    margin: 20px 5px 0 0;
+    cursor: pointer;
+    border: none;
+    -webkit-appearance: none;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: 0.3s ease-in-out;
+}
+
 .hide {
     display: none;
+}
+
+@media all and (min-width: 500px) {
+form {
+    display: grid;
+    grid-template-rows: 3;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    width: 500px;
+    grid-gap: 5px;
+}
+
+input[name="task"], label[for="task"] {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+input[name="when"], label[for="when"] {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+textarea[name="notes"], label[for="notes"] {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+}
+
+button[type="submit"] {
+    grid-row: 3;
+    grid-column: 2;
+    width: 100%;
+}
+}
+
+@media all and (max-width: 800px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media all and (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr;
+    }
 }
