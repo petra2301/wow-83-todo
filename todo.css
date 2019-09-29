@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat|Gloria+Hallelujah|Indie+Flower|Mansalva|Nunito:400,600,700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+}
+
+.startScreen {
+    height: 100vh;
+    width: 100%;
+    background: url("img/todobg.png");
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.startScreen > p {
+    color: white;
+    font-family: "Mansalva", sans-serif;
+    font-size: 2em;
+}
+
+.startBtn {
+    position: absolute;
+    bottom: 5vh;
+    -webkit-appearance: none;
+    border: none;
+    color: white;
+    background: none;
+    font-size: 2em;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.shrinkStartScreen {
+    animation: shrinkStartScreen 1.5s forwards;
+}
+
+@keyframes shrinkStartScreen {
+    0% {
+        height: 100vh;
+    }
+
+    30% {
+        height: 120vh;
+    }
+
+    100% {
+        height: 0vh;
+    }
+}
+
+ .startBtn::after {
+    content: url(img/down-arrow.png);
+    display: block;
+    margin: auto;
+} 
+
+.gradientBottom {
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(0deg, #fff, #ffffff00);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+h1 {
+    /* font-family: "Caveat", sans-serif; */
+    /* font-family: "Gloria Hallelujah", sans-serif; */
+    /* font-family: "Indie Flower", sans-serif; */
+    font-family: "Mansalva", sans-serif;
+    color: white;
+    font-size: 5em;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
