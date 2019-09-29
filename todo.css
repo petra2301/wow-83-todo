@@ -140,6 +140,32 @@ button[type="submit"] {
     cursor: pointer;
 }
 
+.toast {
+    background-color: green;
+    color: white;
+    padding: 5px 30px;
+    opacity: 0;
+    display: block;
+    margin: auto;
+    width: 270px;
+    text-align: center;
+}
+
+.taskAdded {
+    animation: taskAdded 1s forwards;
+}
+
+@keyframes taskAdded {
+    0% {
+        opacity: 0;
+        top: 0;
+    }
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
+
 body > h1 {
     font-family: "Mansalva", sans-serif;
     font-size: 3em;
@@ -153,6 +179,8 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
     padding: 10px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .taskDate {
@@ -228,7 +256,14 @@ article > p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+}
 
+.closeModal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
 }
 
 .editPopup {
@@ -257,6 +292,19 @@ article > p {
     background-repeat: no-repeat;
     background-position: top right;
     background-color: #78e08f;
+}
+
+.deleteTask {
+    animation: deleteTask 1.5s forwards;
+}
+
+@keyframes deleteTask {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
 }
 
 @media all and (min-width: 500px) {

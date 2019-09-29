@@ -5,6 +5,7 @@
 const startBtn = document.querySelector(".startBtn");
 const addForm = document.querySelector("form#addForm");
 const editForm = document.querySelector("form#editForm");
+const modal = document.querySelector(".modal");
 
 startBtn.addEventListener("click", closeStartScreen);
 
@@ -19,6 +20,9 @@ editForm.addEventListener("submit", e => {
     document.querySelector(".modal").classList.add("hide");
  })
 
+modal.addEventListener("click", () => {
+    modal.classList.add("hide");
+})
 get();
 
 function get() {
@@ -56,8 +60,18 @@ function post() {
       .then(res => res.json())
       .then(data => {
         addTask(data);
+        showToast();
+        addForm.reset();
       });
   }
+
+function deleteTaskAnimation(id) {
+    const deletedTask = document.querySelector(`article[data-task-id="${id}"]`)
+    deletedTask.classList.add("deleteTask");
+    deletedTask.addEventListener("animationend", () => {
+    deleteTask(id)
+});
+}
 
 function deleteTask(id) {
     fetch("https://todolist2019-e565.restdb.io/rest/addtaskform/" + id, {
@@ -68,10 +82,11 @@ function deleteTask(id) {
         "cache-control": "no-cache"
       }
     })
-      .then(res => res.json())
-      .then(data => {
-        document.querySelector(`article[data-task-id="${id}"]`).remove();
-      });
+    
+       .then(res => res.json())
+       .then(data => {
+         document.querySelector(`article[data-task-id="${id}"]`).remove();
+       });
 }
 
 function put() {
@@ -128,7 +143,6 @@ function editTask(id){
         });
 }
 
-
 function addTask(task) {
     const template = document.querySelector("template").content;
     const clone = template.cloneNode(true);
@@ -139,7 +153,7 @@ function addTask(task) {
     clone.querySelector(".taskNotes").textContent = task.notes;
   
     clone.querySelector("button.deleteBtn").addEventListener("click", () => {
-      deleteTask(task._id);
+      deleteTaskAnimation(task._id);
     });
   
     clone.querySelector("button.editBtn").addEventListener("click", e => {
@@ -156,6 +170,14 @@ function addTask(task) {
 
     document.querySelector("main").appendChild(clone);
   }
+
+function showToast() {
+    const toast = document.querySelector(".toast")
+    toast.classList.add("taskAdded");
+    setTimeout(function(){
+        toast.classList.remove("taskAdded");
+    }, 4000);
+}
 
 function closeStartScreen() {
     const startScreen = document.querySelector(".startScreen");
