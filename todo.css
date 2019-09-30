@@ -38,7 +38,7 @@ body {
     font-family: "Mansalva", sans-serif;
     font-size: 2em;
     position: absolute;
-    top: 15%;
+    top: 25%;
 }
 
 .startBtn {
@@ -74,6 +74,18 @@ body {
     }
 }
 
+.fadeIn {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1;
+    }
+}
 .shrinkHeader {
     animation: shrinkHeader 3s forwards;
 }
@@ -101,11 +113,11 @@ body {
 @keyframes shrinkText {
     0% {
         position: absolute;
-        top: 15%;
+        top: 25%;
     }
     
     30% {
-        top: 25%;
+        top: 35%;
     }
 
     100% {

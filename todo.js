@@ -203,9 +203,11 @@ function closeStartScreen() {
     startScreen.classList.add("shrinkStartScreen");
     startScreen.addEventListener("animationend", ()=> {
         startScreen.classList.add("hide");
+        document.querySelector("main").classList.remove("hide");
+        document.querySelector(".gradientBottom").classList.remove("hide");
+        document.querySelector("#yourTasks").classList.remove("hide");
+        document.querySelector(".header").classList.remove("hide");
     })
-
-    document.querySelector(".gradientBottom").classList.remove("hide");
 }
 
 function makeDone(id) {
