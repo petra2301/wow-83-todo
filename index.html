@@ -8,53 +8,16 @@
     <title>To-Do List</title>
 </head>
 <body>
-    <div class="startScreen">
-        <h1>To-Do List</h1>
-        <p>by Petra Gergely</p>
-        <button class="startBtn">Click to Continue</button>
+    <div class="header">
+<h1>8.3 To-do list</h1>
     </div>
-    <div class="header hide">
-            <div class="toast">Task successfully added!</div>
-        <h1>Add a task:</h1>
-    <form id="addForm">
-        <label for="task"><strong>Task:</strong></label><br>
-        <input type="text" name="task" placeholder="Walk the dog" required><br>
-        <label for="when"><strong>When?</strong></label><br>
-        <input type="text" name="when" placeholder="Today / In the afternoon / 2019. 09. 31." required><br>
-        <label for="notes"><strong>Notes (optional):</strong></label><br>
-        <textarea name="notes" placeholder="Remember to take documents with you"></textarea>
-        <button type="submit" class="addTaskBtn">Add task</button>
-    </form>
-    <div class="modal hide">
-        <img class="closeModal" src="img/close.png">
-        <div class="editPopup">
-        <h2>Edit "<span class="taskOgName"></span>"</h2>
-        <form id="editForm">
-                <label for="task"><strong>Task:</strong></label><br>
-                <input type="text" name="task" placeholder="Walk the dog" required><br>
-                <label for="when"><strong>When?</strong></label><br>
-                <input type="text" name="when" placeholder="Today / In the afternoon / 2019. 09. 31." required><br>
-                <label for="notes"><strong>Notes (optional):</strong></label><br>
-                <textarea name="notes" placeholder="Remember to take documents with you"></textarea>
-                <input type="hidden" name="id">
-                <button type="submit" class="editTaskBtn">Done editing</button>
-                <p class="cancelEditing">Cancel editing and go back to the task list</p>
-        </form>
-        </div>
-    </div>
-    </div>
-    <h1 id="yourTasks" class="hide">Your tasks so far:</h1>
-    <main class="hide"></main>
-    <div class="gradientBottom hide"></div>
+    <main></main>
+    <div class="gradientBottom"></div>
     <template>
         <article>
-            <h2>Task name</h2>
-            <p class="taskDateP">On <span class="taskDate">Task date</span></p>
-            <p class="taskNotes">Task notes</p>
-            <button class="editBtn"></button>
+            <h3>Task name</h3>
             <button class="doneBtn"></button>
             <button class="notDoneBtn hide"></button>
-            <button class="deleteBtn"></button>
         </article>
     </template>
     <script src="todo.js"></script>
