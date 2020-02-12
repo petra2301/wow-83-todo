@@ -16,8 +16,10 @@
     <template>
         <article>
             <h3>Task name</h3>
-            <button class="doneBtn"></button>
-            <button class="notDoneBtn hide"></button>
+                <input type="hidden" name="id">
+                <input type="number" name="status" class="hide">
+            <button type="submit" class="doneBtn">Mark as done</button>
+            <button type="submit" class="notDoneBtn">Mark as not done</button>
         </article>
     </template>
     <script src="todo.js"></script>

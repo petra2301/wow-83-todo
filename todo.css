@@ -91,18 +91,6 @@ input::placeholder, textarea::placeholder {
     font-family: "Mansalva", sans-serif;
 }
 
-button[type="submit"] {
-    background-color: #FA983A;
-    color: white;
-    border: none;
-    padding: 10px 30px;
-    font-size: 1em;
-    font-weight: 600;
-    font-family: "Nunito", sans-serif;
-    margin: 20px auto;
-    cursor: pointer;
-}
-
 .toast {
     background-color: green;
     color: white;
@@ -167,14 +155,15 @@ article > h3 {
 }
 
 .doneBtn, .notDoneBtn {
-    width: 50px;
     height: 50px;
     cursor: pointer;
-    border: none;
+    /* border: none; */
     -webkit-appearance: none;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     transition: 0.3s ease-in-out;
+    border: 1px solid black;
+    box-shadow: inset -5px -5px 10px #00000066;
 }
 
 .hide {
