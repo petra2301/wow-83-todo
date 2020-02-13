@@ -46,19 +46,26 @@ function displayTasks(task) {
 
 function changeStatus(id) {
   const parentElement = document.querySelector(`article[data-task-id="${id}"]`);
-  if (parentElement.querySelector(`input[type="number"`).value === "1") {
+
+  //toggle visuals first to avoid lag
+  document.querySelector(`article[data-task-id="${id}"]`).classList.toggle("done");
+  parentElement.querySelector("button").classList.toggle("doneBtn");
+  parentElement.querySelector("button").classList.toggle("notDoneBtn");
+
+  //actually update the db
+    if (parentElement.querySelector(`input[type="number"`).value === "1") {
     parentElement.querySelector(`input[type="number"`).value = "2";
   } else {
     parentElement.querySelector(`input[type="number"`).value = "1";
   }
 
-    let data = {
+  let data = {
         done: parentElement.querySelector(`input[type="number"`).value
-    };
+  };
 
-    let postData = JSON.stringify(data);
+  let postData = JSON.stringify(data);
 
-    fetch("https://todolist2019-e565.restdb.io/rest/autumnwind-twistingnether/" + id,
+  fetch("https://todolist2019-e565.restdb.io/rest/autumnwind-twistingnether/" + id,
     {
         method: "put",
         headers: {
@@ -70,11 +77,12 @@ function changeStatus(id) {
     }
 )
 .then(d => d.json())
-.then( updatedTask => {
+/*.then( updatedTask => {
   document.querySelector(`article[data-task-id="${id}"]`).classList.toggle("done");
   
   parentElement.querySelector("button").classList.toggle("doneBtn");
   parentElement.querySelector("button").classList.toggle("notDoneBtn");
-});
+})*/
+;
 }
 
