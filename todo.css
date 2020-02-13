@@ -16,6 +16,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
     background-attachment: fixed;
@@ -40,11 +41,31 @@ h1 {
     color: white;
 }
 
+.charSelect {
+    transition: .3s ease-in-out;
+    margin: 0 10px;
+}
+
+.charSelect:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.notCurrent {
+    opacity: .5;
+}
+
+.currentChar {
+    -webkit-filter: drop-shadow(0px 0px 15px white);
+    filter: drop-shadow(0px 0px 15px white);
+}
+
+
 .contentWrapper {
     display: flex;
     flex-direction: column;
     grid-gap: 20px;
-    padding: 50px;
+    padding: 100px;
     width: 100%;
     max-width: 1400px;
     margin: auto;
@@ -55,7 +76,6 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
-    padding: 50px;
     width: 100%;
     max-width: 1400px;
     margin: auto;

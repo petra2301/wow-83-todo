@@ -1,0 +1,13 @@
+change between characters
+
+reset all
+
+reset every wednesdays
+
+show weeklies and dailies separately
+
+reset weeklies every wednesday and dailies every day 9am
+
+create a new character / new collection
+
+give a password to it
