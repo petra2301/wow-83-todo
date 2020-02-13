@@ -12,7 +12,7 @@
 body {
     font-family: "Nunito", sans-serif;
     background-color: #222222;
-    background: url("img/nyalotha.jpg");
+    background: url("img/nyalotha3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -31,15 +31,6 @@ h2 {
 
 h3 {
     color: #efefef;
-}
-
-.gradientBottom {
-    height: 100px;
-    width: 100%;
-    background: linear-gradient(0deg, #222222, #ffffff00);
-    position: fixed;
-    bottom: 0;
-    left: 0;
 }
 
 h1 {
