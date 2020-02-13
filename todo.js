@@ -2,8 +2,6 @@
 //cors key: 5d9093301ce70f6379855131
 //link https://todolist2019-e565.restdb.io/rest/autumnwind-twistingnether
 
-const taskForm = document.querySelector("#taskForm");
-
 get();
 
 function get() {
@@ -47,7 +45,6 @@ function displayTasks(task) {
     clone.querySelector(`article[data-task-id="${task._id}"]`).classList.add("done");
     clone.querySelector("button").classList.remove("doneBtn");
     clone.querySelector("button").classList.add("notDoneBtn");
-    clone.querySelector(".doneMarker").classList.remove("hide");
   }
 
   document.querySelector("main").append(clone);
@@ -81,7 +78,6 @@ function makeDone(id) {
   
   parentElement.querySelector("button").classList.remove("doneBtn");
   parentElement.querySelector("button").classList.add("notDoneBtn");
-  parentElement.querySelector(".doneMarker").classList.remove("hide");
 });
 }
 
